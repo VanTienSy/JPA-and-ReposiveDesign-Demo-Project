@@ -1,0 +1,185 @@
+$primary-color: rgb(255, 128, 64);
+$light-color: rgb(0, 255, 0);
+$success-color: rgb(0, 0, 255);
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+
+	border-radius: $radius;
+}
+
+.user-list {
+	@include border-radius(10px);
+	-webkit-background-color: $primary-color;
+	-moz-background-color: $primary-color;
+	-ms-background-color: rgb(255, 128, 64);
+	background-color: $primary-color;
+	-moz-color: $success-color;
+	-webkit-color: $success-color;
+	-ms-color: $success-color;
+	color: $success-color;
+}
+
+.text-shadow {
+	text-shadow: 2px 2px red;
+}
+
+
+
+.table-div {
+	background-color: $light-color;
+	-webkit-background-color: $light-color;
+	-moz-background-color: $light-color;
+	-ms-background-color: $light-color;
+	color: $light-color;
+
+}
+
+@mixin border-image($border, $padding, $source, $repeat, $sclice, $width, ) {
+	border: $border;
+	padding: $padding;
+	border-image-source: url($source);
+	border-image-repeat: $repeat;
+	border-image-slice: $sclice;
+	border-image-width: $width;
+}
+
+@mixin multibackground ($url1, $url2, $url3) {
+	background-image: url($url1), url(url2), url(url3);
+	background-position: left top, left top, left-top;
+	background-repeat: no-repeat, repeat, repeat;
+	padding: 75px;
+
+}
+
+$source-img1: 'OIP.jfif';
+
+#border-img {
+	@include border-image(10px, 15px, 'OIP.jfif', round, 30, 10px)
+}
+
+#multibackground {
+	background-image: url(background1.jfif), url(background2.jfif);
+	background-position: left top, left top;
+	background-repeat: repeat, no-repeat;
+	padding: 75px;
+}
+
+#grad6 {
+	height: 300px;
+	//width: 550px;
+	background: -webkit-repeating-radial-gradient(blue, yellow 10%, green 15%);
+	background: -o-repeating-radial-gradient(blue, yellow 10%, green 15%);
+	background: -moz-repeating-radial-gradient(blue, yellow 10%, green 15%);
+	background: repeating-radial-gradient(blue, yellow 10%, green 15%);
+}
+
+#grad5 {
+	height: 300px;
+	//width: 550px;
+	background: -webkit-radial-gradient(red 5%, green 15%, pink 60%);
+	background: -o-radial-gradient(red 5%, green 15%, pink 60%);
+	background: -moz-radial-gradient(red 5%, green 15%, pink 60%);
+	background: radial-gradient(red 5%, green 15%, pink 60%);
+}
+
+#grad4 {
+	height: 100px;
+	background: -webkit-linear-gradient(red, orange, yellow, red, blue, green, pink);
+	background: -o-linear-gradient(red, orange, yellow, red, blue, green, pink);
+	background: -moz-linear-gradient(red, orange, yellow, red, blue, green, pink);
+	background: linear-gradient(red, orange, yellow, red, blue, green, pink);
+}
+
+#grad3 {
+	height: 100px;
+	background: -webkit-linear-gradient(left top, red, blue);
+	background: -o-linear-gradient(bottom right, red, blue);
+	background: -moz-linear-gradient(bottom right, red, blue);
+	background: linear-gradient(to bottom right, red, blue);
+}
+
+#grad2 {
+	height: 100px;
+	background: -webkit-linear-gradient(left, red, blue);
+	background: -o-linear-gradient(right, red, blue);
+	background: -moz-linear-gradient(right, red, blue);
+	background: linear-gradient(to right, red, blue);
+}
+
+#grad1 {
+	height: 100px;
+	background: -webkit-linear-gradient(pink, green);
+	background: -o-linear-gradient(pink, green);
+	background: -moz-linear-gradient(pink, green);
+	background: linear-gradient(pink, green);
+}
+
+div#myDiv2 {
+	width: 300px;
+	height: 100px;
+	background-color: pink;
+	border: 1px solid black;
+}
+
+div#myDiv2 {
+
+
+	transform: skewX(20deg);
+}
+
+div#myDiv1 {
+	width: 300px;
+	height: 100px;
+	background-color: pink;
+	border: 1px solid black;
+}
+
+div#myDiv1 {
+
+	transform: matrix(1, 0, 0.5, 1, 150, 10);
+	transform: rotate(20deg);
+}
+
+#animation {
+
+	animation-duration: 3s;
+	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%
+	}
+
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+.container{
+	position: relative;
+	margin : 100px;
+	background-color: antiquewhite;
+}
+
+.box-orange {
+	position: sticky;
+	background-color: rgb(255, 255, 128);
+	height: 100px;
+	width: 100px;
+	right: 10px;
+	top: 100px;
+
+}
+
+.box-blue {
+
+	background-color: rgb(0, 128, 0);
+	height: 100px;
+	width: 100px;
+
+}
